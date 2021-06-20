@@ -1,0 +1,26 @@
+#pull this image：
+#docker pull rabbitmq:3.8.17-management
+version: '3'
+services:
+    rabbit:
+        image: rabbitmq:3.8.17-management
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+        volumes:
+            - /Users/felix/work/docker/data/rabbitmq/db:/var/lib/rabbitmq
+            - /usr/local/var/log/rabbitmq:/var/log/rabbitmq
+        # 环境变量
+        environment:
+            - RABBITMQ_DEFAULT_USER=rabbitmq
+            - RABBITMQ_DEFAULT_PASS=rabbitmq
+            - TZ=Asia/Shanghai
+            #- RABBITMQ_ERLANG_COOKIE=rabbitcookie
+        networks:
+            - app_net
+        container_name: "compose-rabbitmq"
+        restart: always
+networks:
+    app_net:
+        driver: bridge
+        
