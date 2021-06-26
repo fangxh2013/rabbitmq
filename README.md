@@ -16,7 +16,7 @@
 
    
 
-3. 进入目录，运行：
+3. 进入目录，运行命令启动rabbitmq：
 
 ```shell
 docker-compose up -d
@@ -32,3 +32,10 @@ docker-compose up -d
 
    
 
+5.输入账号密码（在docker-compose.yml中设置）：
+
+账号：`rabbitmq`
+
+密码：`rabbitmq`
+
+![](/Users/felix/Desktop/截屏2021-06-26 下午3.47.51.png)
